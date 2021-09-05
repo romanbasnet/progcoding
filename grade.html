@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grade calculation</title>
+    <style>
+        *{
+            margin:0px;
+        }
+        div{
+            height:400px;
+            width:550px;
+            background-color: rgb(33, 228, 130);
+            font-size: medium;
+            padding-top:10px;
+            margin-top:94px;
+            border-radius:3px;
+        }
+        hr{
+            width:100%;
+            height:3px;
+            background-color: rgb(80, 6, 6);
+        }
+        input[type='text']{
+            height:31px;
+            width:183px;
+            margin-bottom:15px;
+            border-radius:7px;
+        }
+        input[type='button']{
+            height:29px;
+            width:130px;
+            background-color: blue;
+            color:white;
+
+        }
+        h3{
+            color:rgb(233, 89, 36);
+        }
+    </style>
+    
+</head>
+<script rel=stylesheet type=text/javascript>
+    function calculate(){
+        var gpa=document.getElementById('gp').value;
+        var per=document.getElementById('pg').value;
+        var rd=document.getElementsByName("rd");
+        if(rd[0].checked){
+                if(gpa>=0 && gpa<=4){
+                    if(gpa<=4 && gpa>=3.6){
+                        alert("grade=A+\n percentage="+gpa*25+"%");
+                    }
+                    else if(gpa<3.6 && gpa>=3.2){
+                        alert("grade=A\n percentage="+gpa*25+"%");
+                    }
+                    else if(gpa<3.2 && gpa>=2.8){
+                        alert("grade=B+\n percentage="+gpa*25+"%");
+                    }
+                   else if(gpa<2.8 && gpa>=2.4){
+                        alert("grade=B\n percentage="+gpa*25+"%");
+                    }
+                    else if(gpa<2.4 && gpa>=2){
+                        alert("grade=C+\n percentage="+gpa*25+"%");
+                    }
+                   else if(gpa<2 && gpa>=1.6){
+                        alert("grade=C\n percentage="+gpa*25+"%");
+                    }
+                    else if(gpa<1.6 && gpa>=1.2){
+                        alert("grade=D+\n percentage="+gpa*25+"%");
+                    }
+                   else if(gpa<1.2 && gpa>=0.8){
+                        alert("grade=D\n percentage="+gpa*25+"%");
+                    }
+                    else{
+                        alert("grade=E\n percentage="+gpa*25+"%");
+                    }
+                }
+                else{
+                    alert("you typed incorrect GPA");
+                }
+        }
+        else if(rd[1].checked){
+                if(per>=0 && per<=100){
+                    if(per<=100 && per>=90){
+                        alert("grade=A+\n GPA="+per/25);
+                    }
+                    else if(per<90 && per>=80){
+                        alert("grade=A\n GPA="+per/25);
+                    }
+                    else if(per<80 && per>=70){
+                        alert("grade=B+\n GPA="+per/25);
+                    }
+                    else if(per<70 && per>=60){
+                        alert("grade=B\n GPA="+per/25);
+                    }
+                    else if(per<60 && per>=50){
+                        alert("grade=C+\n GPA="+per/25);
+                    }
+                    else if(per<50 && per>=40){
+                        alert("grade=C\n GPA="+per/25);
+                    }
+                    else if(per<40 && per>=30){
+                        alert("grade=D+\n GPA="+per/25);
+                    }
+                    else if(per<30 && per>=20){
+                        alert("grade=D\n GPA="+per/25);
+                    }
+                    else{
+                        alert("grade=E\n GPA="+per/25);
+                    }
+                }
+                else{
+                    alert("you typed incorrect percentage");
+                }
+        }
+        else{
+            alert("None of the box is selected");
+        }
+    }
+    </script>
+<body>
+    <center>
+    <div align=center>
+        <h3>GPA OR PERCENTAGE TO GRADE CALCULATION</h3><br>
+        <hr>
+        <br>
+        
+        <b>GPA*</b><BR>
+            <input type=radio name=rd value="gpaa" >
+        <input type=text name=gpa placeholder="Enter GPA" id=gp><br>
+        OR <BR><br>
+            
+            <b>Percentage*</b><br>
+            <input type=radio name=rd value="percentage">
+        <input type=text name="per" placeholder="Enter percentage" id=pg>
+            <br>
+            <input type=button value="calculate" onclick="calculate()">
+    </div>
+    </center>
+</body>
+</html>
